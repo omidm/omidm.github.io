@@ -1,0 +1,13 @@
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+*synctex.gz
+resume.pdf
+*.pyc
+*.swp
+*.soc
+resume.loc
+
+.DS_Store
