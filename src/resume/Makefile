@@ -18,7 +18,7 @@ clean:
 
 install:
 	pdflatex $(TARGET).tex
-	cp $(PDF) ../../
+	cp $(PDF) ../../materials
 view:
 	pdflatex $(TARGET).tex
 	okular $(PDF)
