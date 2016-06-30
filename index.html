@@ -42,7 +42,7 @@
           <ul class="nav navbar-nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#publications">Publications</a></li>
+            <li><a href="#papers">Papers</a></li>
             <li><a href="#resume">Resume</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -122,7 +122,7 @@
 
 
       <h1 id="projects" style="padding-bottom: 20px"> Projects </h1>
-      <div class="row">
+      <div class="row" style="padding-bottom: 20px">
         <div class="col-md-2 col-sm-2">
           <a href="http://nimbus.stanford.edu" target="_blank">
             <img src="images/nimbus-logo.png" style="width: 100%; max-width:200px;"/>
@@ -130,12 +130,25 @@
         </div>
         <div class="col-md-10 col-sm-10">
           <p style="text-align: left; font-size: 14pt;">
-            Nimbus Project
+            <strong>Nimbus Project:</strong>
+            Nimbus is a general purpose cloud computing system specially
+            designed for computations with short tasks. Nimbus is developed in
+            C++ and the API offers a data model similar to DraydLINQ and Spark.
+            The key difference between Nimbus and its counterparts is the novel
+            control plane abstraction called <strong>Execution
+            Templates</strong>. For jobs with
+            short tasks the runtime overhead becomes comparable to the task
+            itself. For example for an application with 4ms tasks, Sparks
+            runtime overhead is about 98%. Execution templates enable Nimbus to
+            schedule and drive jobs with tasks as short as 100us over large
+            number of workers at scale with negligible runtime overhead. For
+            more information visit <a
+            href="http://nimbus.stanford.edu" target="_blank">Nimbus</a> home page.
           </p>
         </div>
       </div>
 
-      <div class="row">
+      <div class="row" style="padding-bottom: 20px">
         <div class="col-md-2 col-sm-2">
           <a href="materials/janus.pdf" target="_blank">
             <img src="images/janus-logo.png" style="width: 100%; max-width:200px;"/>
@@ -143,11 +156,23 @@
         </div>
         <div class="col-md-10 col-sm-10">
           <p style="text-align: left; font-size: 14pt;">
-            Janus Project
+            <strong>Janus Project:</strong>
+            In this project, we investigate novel techniques to design MAC
+            protocol for the full duplex radio. This project follows SING’s
+            earlier paper on single channel full duplex wireless network (please
+                see here), which explores feasible implementation of the
+            physical layer for efficient simultaneous transmission and
+            reception.  We consider the very fundamental characteristics of a
+            full duplex network and try to design a MAC protocol which perfectly
+            takes the advantages of the freedom provided by the physical layer.
+            Specially, the goal is to improve the throughput as much as two
+            times of the ordinary half duplex systems while remaining fair to
+            all the users. 
           </p>
         </div>
       </div>
 
+<!--
       <div class="row">
         <div class="col-md-2 col-sm-2">
           <a href="materials/packet-classification.pdf" target="_blank">
@@ -219,8 +244,213 @@
         </div>
       </div>
 
+-->
 
-      <h1 id="publications" style="padding-bottom: 20px"> Publications </h1>
+      <h1 id="papers" style="padding-bottom: 20px"> Papers </h1>
+
+
+      <div class="container">
+
+      <!-- h2> Technical Reports</h2-->
+
+        <div class="jumbotron">
+        <dl>
+          <dt>
+            Distributed Graphical Simulation in the Cloud
+            <a class="btn-lg" href="http://arxiv.org/abs/1606.01966" target="_blank">
+              <span class="glyphicon glyphicon-file" aria-hidden="true" style="font-size: 30px; color: #5CB85C;"></span>
+            </a>
+          </dt>
+          <dd>
+            Omid Mashayekhi, Chinmayee Shah, Hang Qu, Andrew Lim, Philip Levis
+          </dd>
+          <dt>
+            Abstract
+          </dt>
+          <dd>
+            Graphical simulations are a cornerstone of modern media and
+            films. But existing software packages are designed to run on HPC
+            nodes, and perform poorly in the computing cloud.  These
+            simulations have complex data access patterns over complex data
+            structures, and mutate data arbitrarily, and so are a poor fit for
+            existing cloud computing systems. We describe a software
+            architecture for running graphical simulations in the cloud that
+            decouples control logic, computations and data exchanges. This
+            allows a central controller to balance load by redistributing
+            computations, and recover from failures. Evaluations show that the
+            architecture can run existing, state-of-the-art simulations in the
+            presence of stragglers and failures, thereby enabling this large
+            class of applications to use the computing cloud for the first
+            time.
+          </dd>
+        </dl>
+        </div>
+
+
+
+        <div class="jumbotron">
+        <dl>
+          <dt>
+            Scalable, Fast Cloud Computing with Execution Templates
+            <a class="btn-lg" href="http://arxiv.org/abs/1606.01972" target="_blank">
+              <span class="glyphicon glyphicon-file" aria-hidden="true" style="font-size: 30px; color: #5CB85C;"></span>
+            </a>
+          </dt>
+          <dd>
+            Omid Mashayekhi, Hang Qu, Chinmayee Shah, Philip Levis
+          </dd>
+          <dt>
+            Abstract
+          </dt>
+          <dd>
+            Large scale cloud data analytics applications are often CPU
+            bound. Most of these cycles are wasted: benchmarks written in C++ run
+            10-51 times faster than frameworks such as Naiad and Spark.  However,
+            calling faster implementations from those frameworks only sees
+            moderate (3-5x) speedups because their control planes cannot schedule
+            work fast enough.
+            
+            This paper presents execution templates, a control plane abstraction
+            for CPU-bound cloud applications, such as machine learning.  Execution
+            templates leverage highly repetitive control flow to cache scheduling
+            decisions as templates.  Rather than reschedule hundreds of
+            thousands of tasks on every loop execution, nodes instantiate these
+            templates.  A controller's template specifies the execution across all
+            worker nodes, which it partitions into per-worker templates. To ensure
+            that templates execute correctly, controllers dynamically patch
+            templates to match program control flow.  We have implemented
+            execution templates in Nimbus, a C++ cloud computing framework.
+            Running in Nimbus, analytics benchmarks can run 16-43 times faster
+            than in Naiad and Spark. Nimbus's control plane can scale out to run
+            these faster benchmarks on up to 100 nodes (800 cores).
+          </dd>
+        </dl>
+        </div>
+
+
+
+        <div class="jumbotron">
+        <dl>
+          <dt>
+            Canary: A Scheduling Architecture for High Performance Cloud Computing
+            <a class="btn-lg" href="http://hci.stanford.edu/cstr/reports/2016-01.pdf" target="_blank">
+              <span class="glyphicon glyphicon-file" aria-hidden="true" style="font-size: 30px; color: #5CB85C;"></span>
+            </a>
+          </dt>
+          <dd>
+            Hang Qu, Omid Mashayekhi, David Terei, Philip Levis
+          </dd>
+          <dt>
+            Abstract
+          </dt>
+          <dd>
+            We present Canary, a scheduling architecture that allows
+            high performance analytics workloads to scale out to run
+            on thousands of cores. Canary is motivated by the observation
+            that a central scheduler is a bottleneck for high
+            performance codes: a handful of multicore workers can
+            execute tasks faster than a controller can schedule them.
+            The key insight in Canary is to reverse the responsibilities
+            between controllers and workers. Rather than
+            dispatch tasks to workers, which then fetch data as necessary,
+            in Canary the controller assigns data partitions to
+            workers, which then spawn and schedule tasks locally.
+            We evaluate three benchmark applications in Canary
+            on up to 64 servers and 1,152 cores on Amazon EC2.
+            Canary achieves up to 9−90× speedup over Spark and
+            up to 4× speedup over GraphX, a highly optimized graph
+            analytics engine. While current centralized schedulers
+            can schedule 2,500 tasks/second, each Canary worker can
+            schedule 136,000 tasks/second per core and experiments
+            show this scales out linearly, with 64 workers scheduling
+            over 120 million tasks per second, allowing Canary to
+            support optimized jobs running on thousands of cores.
+          </dd>
+        </dl>
+        </div>
+
+
+        <div class="jumbotron">
+        <dl>
+          <dt>
+            Janus: A Novel MAC Protocol for Full Duplex Radio 
+            <a class="btn-lg" href="http://hci.stanford.edu/cstr/reports/2013-02.pdf" target="_blank">
+              <span class="glyphicon glyphicon-file" aria-hidden="true" style="font-size: 30px; color: #5CB85C;"></span>
+            </a>
+          </dt>
+          <dd>
+            Jae Young Kim, Omid Mashayekhi, Hang Qu, Maria Kazandjieva, and Philip Levis
+          </dd>
+          <dt>
+            Abstract
+          </dt>
+          <dd>
+            This paper presents Janus, a novel MAC protocol for
+            full–duplex wireless networks. Unlike other full-duplex
+            MACs, Janus allows partially interfering nodes to cooperate
+            by finding the appropriate transmission rates based on
+            interference levels, making better use of the channel. Computing
+            the optimal schedule and transmission rates is NPComplete,
+            so Janus uses a cheaper heuristic approach. Janus
+            also ensures that channel access time is shared fairly between
+            all nodes. Janus has lower per-packet overhead compared
+            to CSMA/CA because it eliminates random back-off
+            and lets nodes transmit multiple packets with a single set of
+            control packets. We show that for a setup with one access
+            point and three nodes, Janus achieves 2.5X the throughput
+            of half–duplex system based on CSMA/CA.
+          </dd>
+        </dl>
+        </div>
+
+
+
+
+
+      <!-- h2> Publications</h2-->
+
+        <div class="jumbotron">
+        <dl>
+          <dt>
+           Uniquely Decodable Codes with Fast Decoder for Overloaded Synchronous CDMA Systems 
+            <a class="btn-lg" href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?reload=true&tp=&arnumber=6266766&contentType=Early+Access+Articles&searchField%3DSearch_All%26queryText%3DO.+Mashayekhi" target="_blank">
+              <span class="glyphicon glyphicon-file" aria-hidden="true" style="font-size: 30px; color: #5CB85C;"></span>
+            </a>
+          </dt>
+          <dd>
+            Omid Mashayekhi, Farokh Marvasti
+          </dd>
+          <dt>
+            Abstract
+          </dt>
+          <dd>
+            In this paper, we introduce a new class of signature matrices for
+            overloaded synchronous CDMA systems that have a very low complexity
+            decoder. While overloaded systems are more efficient from the
+            bandwidth point of view, the Maximum Likelihood (ML) implementation
+            for decoding is impractical even for moderate dimensions. Simulation
+            results show that the performance of the proposed decoder is very
+            close to that of the ML decoder. Indeed, the proposed decoding
+            scheme needs neither multiplication nor addition and requires only a
+            few comparisons . Furthermore, the computational complexity and the
+            probability of error vs. Signal to Noise Ratios (SNR) are derived
+            analytically.
+          </dd>
+        </dl>
+        </div>
+
+
+
+
+
+
+
+
+
+
+      </div> <!-- /container -->
+
+
 
       <h1 id="resume"> Resume </h1>
       <p style="text-align: left; font-size: 14pt;">
