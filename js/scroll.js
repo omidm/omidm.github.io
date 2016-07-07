@@ -18,4 +18,8 @@ $( document ).ready(function() {
         scrollToAnchor('papers');
   });
 
+  $("#home-link").click(function() {
+        scrollToAnchor('home');
+  });
+
 });

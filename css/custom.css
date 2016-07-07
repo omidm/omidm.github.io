@@ -15,6 +15,46 @@ a {
   color: #8C1515;
 }
 
+.main-project{
+  margin-bottom: 40px;
+  text-align: justify;
+  background-color: #eee;/*#DAD7CB;*/
+}
+
+.other-project{
+  margin-bottom: 40px;
+  text-align: justify;
+}
+
+
+.jumbotron {
+  text-align: justify;
+}
+
+.paper-icon {
+  background-image: url('../images/sheet-icon-red.png');
+  background-size: 30px 40px;
+  width: 30px;
+  height: 40px;
+  display: inline-block;
+}
+
+.paper-icon:hover {
+  background-image: url('../images/sheet-icon-orange.png');
+}
+
+.poster-icon {
+  background-image: url('../images/poster-icon-red.png');
+  background-size: 40px 40px;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+}
+
+.poster-icon:hover {
+  background-image: url('../images/poster-icon-orange.png');
+}
+
 
 /** leave some space for the nav bars */
 .jumbotron {

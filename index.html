@@ -43,7 +43,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="index.html">Home</a></li>
+            <li><a id="home-link" href="#">Home</a></li>
             <li><a id="projects-link" href="#">Projects</a></li>
             <li><a id="papers-link" href="#">Papers</a></li>
             <li><a id="resume-link" href="#">Resume</a></li>
@@ -53,6 +53,7 @@
     </nav>
 
     <div class="container">
+    <h1 name="home" style=""></h1>
 
 
       <div class="row" style="padding-bottom: 30px">
@@ -103,9 +104,9 @@
         </div>
       </div>
 
-      <div class="row">
+      <div class="row jumbotron">
         <div class="col-md-12 col-sm-12">
-          <p style="text-align: left; font-size: 14pt;">
+          <p style="text-align: justify; font-size: 12pt;">
             I am a graduate student at <a href="http://www.stanford.edu"
             target="_blank">Stanford University</a>, currently, a Ph.D.
             candidate in <a href="http://ee.stanford.edu"
@@ -115,9 +116,10 @@
             computing, distributed systems, and networking systems. I work with
             Professor <a/ href="http://csl.stanford.edu/~pal/"
             target="_blank">Philip Levis</a> as a member of <a
-            href="http://sing.stanford.edu" target="_blank">Stanford
-            Information Networks Group (SING)</a>. I received M.S. degree from
-            Stanford University in 2013, and B.S.  degree from <a
+            href="http://sing.stanford.edu" target="_blank">Stanford Information
+            Networks Group (SING)</a>. I received M.S. degree from <a
+            href="http://www.stanford.edu" target="_blank">Stanford
+            University</a> in 2013, and B.S.  degree from <a
             href="http://www.sharif.edu" target="_blank"> Sharif University</a>
             in 2011, both in Electrical Engineering.  
           </p>
@@ -125,17 +127,20 @@
       </div>
 
 
-      <h1 name="projects" style="padding-bottom: 20px"> Projects </h1>
 
-      <div class="row" style="padding-bottom: 20px">
+      <h1 name="projects"> Projects </h1>
+
+      <h2> Main Research Projects </h2>
+
+      <div class="row main-project">
         <div class="col-md-2 col-sm-2">
           <a href="http://nimbus.stanford.edu" target="_blank">
-            <img src="images/nimbus-logo.png" style="width: 100%; max-width:200px;"/>
+            <img src="images/nimbus-logo.png" style="padding-top: 20px; width: 100%; max-width:200px;"/>
             </a>
         </div>
         <div class="col-md-10 col-sm-10">
-          <p style="text-align: left; font-size: 14pt;">
-            <strong>Nimbus Project:</strong>
+          <h3>Nimbus Project</h3>
+          <p style="font-size: 12pt;">
             Nimbus is a general purpose cloud computing system specially
             designed for computations with short tasks. Nimbus is developed in
             C++ and the API offers a data model similar to DraydLINQ and Spark.
@@ -153,103 +158,119 @@
         </div>
       </div>
 
-      <div class="row" style="padding-bottom: 20px">
+      <div class="row main-project">
         <div class="col-md-2 col-sm-2">
           <a href="materials/janus.pdf" target="_blank">
-            <img src="images/janus-logo.png" style="width: 100%; max-width:200px;"/>
+            <img src="images/janus-logo.png" style="padding-top: 20px; width: 100%; max-width:200px;"/>
           </a>
         </div>
         <div class="col-md-10 col-sm-10">
-          <p style="text-align: left; font-size: 14pt;">
-            <strong>Janus Project:</strong>
+          <h3>Janus Project:</h3>
+          <p style="font-size: 12pt;">
             In this project, we investigate novel techniques to design MAC
-            protocol for the full duplex radio. This project follows SING’s
+            protocol for the <a href="https://sing.stanford.edu/site/projects/7"
+            target="_blank">Full Duplex radio</a>. This project follows SING’s
             earlier paper on single channel full duplex wireless network (please
-                see here), which explores feasible implementation of the
-            physical layer for efficient simultaneous transmission and
-            reception.  We consider the very fundamental characteristics of a
-            full duplex network and try to design a MAC protocol which perfectly
-            takes the advantages of the freedom provided by the physical layer.
-            Specially, the goal is to improve the throughput as much as two
-            times of the ordinary half duplex systems while remaining fair to
-            all the users. 
+                see <a href="https://sing.stanford.edu/fullduplex/"
+                target="_blank">here</a>), which explores feasible
+            implementation of the physical layer for efficient simultaneous
+            transmission and reception.  We consider the very fundamental
+            characteristics of a full duplex network and try to design a MAC
+            protocol which perfectly takes the advantages of the freedom
+            provided by the physical layer.  Specially, the goal is to improve
+            the throughput as much as two times of the ordinary half duplex
+            systems while remaining fair to all the users. 
           </p>
         </div>
       </div>
 
-<!--
+
+      <h2> Selected Short Projects </h2>
+
       <div class="row">
-        <div class="col-md-2 col-sm-2">
-          <a href="materials/packet-classification.pdf" target="_blank">
-            <img src="images/packet-logo.png" style="width: 100%; max-width:200px;"/>
-          </a>
-        </div>
-        <div class="col-md-10 col-sm-10">
-          <p style="text-align: left; font-size: 14pt;">
-            Packet Classification
+
+        <div class="col-md-6 col-sm-6 other-project">
+          <div class="col-md-4 col-sm-4">
             <a href="materials/packet-classification.pdf" target="_blank">
-              <img src="images/sheet-icon.png" style="width:30px;"/>
+              <img src="images/packet-logo.png" style="padding-top: 20px; width: 100%; max-width:200px;"/>
+            </a>
+          </div>
+          <div class="col-md-8 col-sm-8">
+            <h3>Packet Classification</h3>
+            <p style="font-size: 12pt;">
+              Packet Classification
+            </p>
+            <a href="materials/packet-classification.pdf" target="_blank">
+              <div class="paper-icon"></div>
             </a>
             <a href="materials/ee384x-presentation.pdf" target="_blank">
-              <img src="images/poster-icon.png" style="width:40px;"/>
+              <div class="poster-icon"></div>
             </a>
-          </p>
+          </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="col-md-2 col-sm-2">
-          <a href="https://reproducingnetworkresearch.wordpress.com/2012/06/06/dcell-a-scalable-and-fault-tolerant-network-structure-for-data-centers/" target="_blank">
-            <img src="images/dcell-logo.png" style="width: 100%; max-width:200px;"/>
-          </a>
-        </div>
-        <div class="col-md-10 col-sm-10">
-          <p style="text-align: left; font-size: 14pt;">
-            Open flow DCell
-            <a href="https://reproducingnetworkresearch.wordpress.com/" target="_blank"> Main Page </a>
+        <div class="col-md-6 col-sm-6 other-project">
+          <div class="col-md-4 col-sm-4">
             <a href="https://reproducingnetworkresearch.wordpress.com/2012/06/06/dcell-a-scalable-and-fault-tolerant-network-structure-for-data-centers/" target="_blank">
-              <img src="images/sheet-icon.png" style="width:30px;"/>
+              <img src="images/dcell-logo.png" style="padding-top: 20px; width: 100%; max-width:200px;"/>
             </a>
-          </p>
+          </div>
+          <div class="col-md-8 col-sm-8">
+            <h3>DCell with Open flow</h3>
+            <p style="text-align: left; font-size: 12pt;">
+              Open flow DCell
+              <a href="https://reproducingnetworkresearch.wordpress.com/" target="_blank"> Main Page </a>
+            </p>
+            <a href="https://reproducingnetworkresearch.wordpress.com/2012/06/06/dcell-a-scalable-and-fault-tolerant-network-structure-for-data-centers/" target="_blank">
+              <div class="paper-icon"></div>
+            </a>
+          </div>
         </div>
+
       </div>
 
+
       <div class="row">
-        <div class="col-md-2 col-sm-2">
-          <a href="materials/predicting-x86.pdf" target="_blank">
-            <img src="images/predicting-logo.png" style="width: 100%; max-width:200px;"/>
-          </a>
-        </div>
-        <div class="col-md-10 col-sm-10">
-          <p style="text-align: left; font-size: 14pt;">
-            x86 prediction (machine learning)
+
+        <div class="col-md-6 col-sm-6 other-project">
+          <div class="col-md-4 col-sm-4">
             <a href="materials/predicting-x86.pdf" target="_blank">
-              <img src="images/sheet-icon.png" style="width:30px;"/>
+              <img src="images/predicting-logo.png" style="padding-top: 20px; width: 100%; max-width:200px;"/>
+            </a>
+          </div>
+          <div class="col-md-8 col-sm-8">
+            <h3>x86 Performance Prediction</h3>
+            <p style="text-align: left; font-size: 12pt;">
+              x86 prediction (machine learning)
+            </p>
+            <a href="materials/predicting-x86.pdf" target="_blank">
+              <div class="paper-icon"></div>
             </a>
             <a href="materials/cs229-poster.pdf" target="_blank">
-              <img src="images/poster-icon.png" style="width:40px;"/>
+              <div class="poster-icon"></div>
             </a>
-          </p>
+          </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="col-md-2 col-sm-2">
-          <a href="materials/spectral-utilization.pdf" target="_blank">
-            <img src="images/spectral-logo.png" style="width: 100%; max-width:200px;"/>
-          </a>
-        </div>
-        <div class="col-md-10 col-sm-10">
-          <p style="text-align: left; font-size: 14pt;">
-            Cognitive Radio Devices (wireless)
+        <div class="col-md-6 col-sm-6 other-project">
+          <div class="col-md-4 col-sm-4">
             <a href="materials/spectral-utilization.pdf" target="_blank">
-              <img src="images/sheet-icon.png" style="width:30px;"/>
+              <img src="images/spectral-logo.png" style="padding-top: 20px; width: 100%; max-width:200px;"/>
             </a>
-          </p>
+          </div>
+          <div class="col-md-8 col-sm-8">
+            <h3>Cognitive Radio Devices</h3>
+            <p style="text-align: left; font-size: 12pt;">
+              Cognitive Radio Devices (wireless)
+            </p>
+            <a href="materials/spectral-utilization.pdf" target="_blank">
+              <div class="paper-icon"></div>
+            </a>
+          </div>
         </div>
+
       </div>
 
--->
 
       <h1 name="papers" style="padding-bottom: 20px"> Papers </h1>
 
@@ -262,7 +283,8 @@
           <dt>
             Distributed Graphical Simulation in the Cloud
             <a class="btn-lg" href="http://arxiv.org/abs/1606.01966" target="_blank">
-              <span class="glyphicon glyphicon-file" aria-hidden="true" style="font-size: 30px;"></span>
+              <!--span class="glyphicon glyphicon-file" aria-hidden="true" style="font-size: 30px;"></span-->
+              <div class="paper-icon"></div>
             </a>
           </dt>
           <dd>
@@ -297,7 +319,7 @@
           <dt>
             Scalable, Fast Cloud Computing with Execution Templates
             <a class="btn-lg" href="http://arxiv.org/abs/1606.01972" target="_blank">
-              <span class="glyphicon glyphicon-file" aria-hidden="true" style="font-size: 30px;"></span>
+              <div class="paper-icon"></div>
             </a>
           </dt>
           <dd>
@@ -338,7 +360,7 @@
           <dt>
             Canary: A Scheduling Architecture for High Performance Cloud Computing
             <a class="btn-lg" href="http://hci.stanford.edu/cstr/reports/2016-01.pdf" target="_blank">
-              <span class="glyphicon glyphicon-file" aria-hidden="true" style="font-size: 30px;"></span>
+              <div class="paper-icon"></div>
             </a>
           </dt>
           <dd>
@@ -379,7 +401,7 @@
           <dt>
             Janus: A Novel MAC Protocol for Full Duplex Radio 
             <a class="btn-lg" href="http://hci.stanford.edu/cstr/reports/2013-02.pdf" target="_blank">
-              <span class="glyphicon glyphicon-file" aria-hidden="true" style="font-size: 30px;"></span>
+              <div class="paper-icon"></div>
             </a>
           </dt>
           <dd>
@@ -418,7 +440,7 @@
           <dt>
            Uniquely Decodable Codes with Fast Decoder for Overloaded Synchronous CDMA Systems 
             <a class="btn-lg" href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?reload=true&tp=&arnumber=6266766&contentType=Early+Access+Articles&searchField%3DSearch_All%26queryText%3DO.+Mashayekhi" target="_blank">
-              <span class="glyphicon glyphicon-file" aria-hidden="true" style="font-size: 30px;"></span>
+              <div class="paper-icon"></div>
             </a>
           </dt>
           <dd>
@@ -457,12 +479,12 @@
 
       <h1 name="resume" style="padding-bottom: 20px"> Resume </h1>
 
-      <p style="text-align: left; font-size: 14pt;">
-        You can find a copy of my resume here
-        <a href="materials/resume.pdf" target="_blank">
-          <span class="glyphicon glyphicon-file" aria-hidden="true" style="font-size: 30px;"></span>
-        </a>
-      </p>
+      <div class="jumbotron">
+        <p style="text-align: left; font-size: 14pt; display: inline-block;">
+          You can find a copy of my resume 
+          <a href="materials/resume.pdf" target="_blank">here</a>.
+        </p>
+      </div>
 
 
     </div> <!-- /container -->
