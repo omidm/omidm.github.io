@@ -15,17 +15,11 @@ a {
   color: #8C1515;
 }
 
-.main-project{
+.block {
   margin-bottom: 40px;
   text-align: justify;
   background-color: #eee;/*#DAD7CB;*/
 }
-
-.other-project{
-  margin-bottom: 40px;
-  text-align: justify;
-}
-
 
 .jumbotron {
   text-align: justify;
