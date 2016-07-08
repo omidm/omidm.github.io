@@ -58,7 +58,7 @@
 
       <div class="row" style="padding-bottom: 30px">
         <div class="col-md-3 col-sm-3">
-          <img src="images/omidm.png" style="width: 90%; max-width:300px;"/>
+          <img src="images/omid.png" alt="Omid Mashayekhi" style="width: 90%; max-width:300px;"/>
         </div>
         <div class="col-md-6 col-sm-6">
           <h1 style="padding-bottom: 10pt;"> Omid Mashayekhi </h1>
@@ -104,9 +104,9 @@
         </div>
       </div>
 
-      <div class="row jumbotron">
+      <div class="row main-project">
         <div class="col-md-12 col-sm-12">
-          <p style="text-align: justify; font-size: 12pt;">
+          <p style="text-align: justify; font-size: 13pt;">
             I am a graduate student at <a href="http://www.stanford.edu"
             target="_blank">Stanford University</a>, currently, a Ph.D.
             candidate in <a href="http://ee.stanford.edu"
@@ -143,7 +143,9 @@
           <p style="font-size: 12pt;">
             Nimbus is a general purpose cloud computing system specially
             designed for computations with short tasks. Nimbus is developed in
-            C++ and the API offers a data model similar to DraydLINQ and Spark.
+            C++ and the API offers a data model similar to
+            <a href="http://spark.apache.org/" target="_blank">Spark</a> and
+            <a href="https://www.microsoft.com/en-us/research/project/naiad/" target="_blank">Naiad</a>.
             The key difference between Nimbus and its counterparts is the novel
             control plane abstraction called <strong>Execution
             Templates</strong>. For jobs with
@@ -165,7 +167,7 @@
           </a>
         </div>
         <div class="col-md-10 col-sm-10">
-          <h3>Janus Project:</h3>
+          <h3>Janus Project</h3>
           <p style="font-size: 12pt;">
             In this project, we investigate novel techniques to design MAC
             protocol for the <a href="https://sing.stanford.edu/site/projects/7"
@@ -179,7 +181,8 @@
             protocol which perfectly takes the advantages of the freedom
             provided by the physical layer.  Specially, the goal is to improve
             the throughput as much as two times of the ordinary half duplex
-            systems while remaining fair to all the users. 
+            systems while remaining fair to all the users. You can find our
+            paper <a href="materials/janus.pdf" target="_blank">here</a>. 
           </p>
         </div>
       </div>
@@ -191,57 +194,20 @@
 
         <div class="col-md-6 col-sm-6 other-project">
           <div class="col-md-4 col-sm-4">
-            <a href="materials/packet-classification.pdf" target="_blank">
-              <img src="images/packet-logo.png" style="padding-top: 20px; width: 100%; max-width:200px;"/>
-            </a>
-          </div>
-          <div class="col-md-8 col-sm-8">
-            <h3>Packet Classification</h3>
-            <p style="font-size: 12pt;">
-              Packet Classification
-            </p>
-            <a href="materials/packet-classification.pdf" target="_blank">
-              <div class="paper-icon"></div>
-            </a>
-            <a href="materials/ee384x-presentation.pdf" target="_blank">
-              <div class="poster-icon"></div>
-            </a>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-sm-6 other-project">
-          <div class="col-md-4 col-sm-4">
-            <a href="https://reproducingnetworkresearch.wordpress.com/2012/06/06/dcell-a-scalable-and-fault-tolerant-network-structure-for-data-centers/" target="_blank">
-              <img src="images/dcell-logo.png" style="padding-top: 20px; width: 100%; max-width:200px;"/>
-            </a>
-          </div>
-          <div class="col-md-8 col-sm-8">
-            <h3>DCell with Open flow</h3>
-            <p style="text-align: left; font-size: 12pt;">
-              Open flow DCell
-              <a href="https://reproducingnetworkresearch.wordpress.com/" target="_blank"> Main Page </a>
-            </p>
-            <a href="https://reproducingnetworkresearch.wordpress.com/2012/06/06/dcell-a-scalable-and-fault-tolerant-network-structure-for-data-centers/" target="_blank">
-              <div class="paper-icon"></div>
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-
-      <div class="row">
-
-        <div class="col-md-6 col-sm-6 other-project">
-          <div class="col-md-4 col-sm-4">
             <a href="materials/predicting-x86.pdf" target="_blank">
               <img src="images/predicting-logo.png" style="padding-top: 20px; width: 100%; max-width:200px;"/>
             </a>
           </div>
           <div class="col-md-8 col-sm-8">
-            <h3>x86 Performance Prediction</h3>
+            <h3>x86 Runtime Prediction</h3>
             <p style="text-align: left; font-size: 12pt;">
-              x86 prediction (machine learning)
+              Predicting x86 program runtime for Intel processor. As a part of
+              the machine learning course at Stanford (<a
+              href="http://cs229.stanford.edu/" target="_blank">CS229</a>), we
+              developed a series of supervised learning methods for predicting
+              the runtime length of serialized x86 programs for Intel
+              processors. Our generative model predicts runtime for programs
+              with arbitrary numbers of instructions with 12% error.
             </p>
             <a href="materials/predicting-x86.pdf" target="_blank">
               <div class="paper-icon"></div>
@@ -254,6 +220,57 @@
 
         <div class="col-md-6 col-sm-6 other-project">
           <div class="col-md-4 col-sm-4">
+            <a href="materials/packet-classification.pdf" target="_blank">
+              <img src="images/packet-logo.png" style="padding-top: 20px; width: 100%; max-width:200px;"/>
+            </a>
+          </div>
+          <div class="col-md-8 col-sm-8">
+            <h3>Packet Classification</h3>
+            <p style="font-size: 12pt;">
+              Novel and optimized methods for packet classification when both
+              rules and keys contain wildcard expressions. This work introduces
+              a software based algorithm which is memory efficient, does not
+              need expansion for rules and keys containing wildcards, is
+              scalable, and provides multi-match results.
+            </p>
+            <a href="materials/packet-classification.pdf" target="_blank">
+              <div class="paper-icon"></div>
+            </a>
+            <a href="materials/ee384x-presentation.pdf" target="_blank">
+              <div class="poster-icon"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+
+        <div class="col-md-6 col-sm-6 other-project">
+          <div class="col-md-4 col-sm-4">
+            <a href="https://reproducingnetworkresearch.wordpress.com/2012/06/06/dcell-a-scalable-and-fault-tolerant-network-structure-for-data-centers/" target="_blank">
+              <img src="images/dcell-logo.png" style="padding-top: 20px; width: 100%; max-width:200px;"/>
+            </a>
+          </div>
+          <div class="col-md-8 col-sm-8">
+            <h3>DCell with OpenFlow</h3>
+            <p style="text-align: left; font-size: 12pt;">
+              Simulating DCell topology and routing for data centers using
+              Mininet and OpenFlow controller. Each year, advanced networking
+              course at Stanford (<a
+              href="http://web.stanford.edu/class/cs244/"
+              target="_blank">CS244</a>) publishes a <a
+              href="https://reproducingnetworkresearch.wordpress.com/"
+              target="_blank">blog</a> on reproducing the results reported in
+              the literature by students. Yo can find our report  <a
+              href="https://reproducingnetworkresearch.wordpress.com/2012/06/06/dcell-a-scalable-and-fault-tolerant-network-structure-for-data-centers/"
+              target="_blank">here </a>.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 other-project">
+          <div class="col-md-4 col-sm-4">
             <a href="materials/spectral-utilization.pdf" target="_blank">
               <img src="images/spectral-logo.png" style="padding-top: 20px; width: 100%; max-width:200px;"/>
             </a>
@@ -261,7 +278,10 @@
           <div class="col-md-8 col-sm-8">
             <h3>Cognitive Radio Devices</h3>
             <p style="text-align: left; font-size: 12pt;">
-              Cognitive Radio Devices (wireless)
+              This work is a literature survey on cognitive radio devices as a
+              part of wireless networking course at Stanford (<a
+              href="http://web.stanford.edu/class/ee359/"
+              target="_blank">CS359</a>).
             </p>
             <a href="materials/spectral-utilization.pdf" target="_blank">
               <div class="paper-icon"></div>
@@ -269,6 +289,32 @@
           </div>
         </div>
 
+      </div>
+
+
+      <h2> Older Research Projects </h2>
+
+      <div class="row main-project">
+        <div class="col-md-2 col-sm-2">
+          <a href="http://nimbus.stanford.edu" target="_blank">
+            <img src="images/overloaded-codes.png" style="padding-top: 20px; width: 100%; max-width:200px;"/>
+            </a>
+        </div>
+        <div class="col-md-10 col-sm-10">
+            <h3>Overloaded Codes</h3>
+            <p style="font-size: 12pt;">
+              As my undergraduate research thesis, I worked on developing
+              overloaded codes with efficient decoders for CDMA systems.  These
+              codes not only have really simple decoder but also show the
+              bit-error-rate (BER) performance almost as good as the
+              maximum-likelihood (ML) decoder. The novel coding matrices are
+              called logical signature matrices (LSM), which results in
+              efficient decoding on the receiver side with only few
+              comparisons. We have patented the results, and you can find  a
+              copy of it <a href="materials/patent.pdf"
+              target="_blank">here</a>.
+            </p>
+        </div>
       </div>
 
 
