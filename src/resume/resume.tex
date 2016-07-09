@@ -5,6 +5,8 @@
 \documentclass[letterpaper,10pt]{article}
 
 %-----------------------------------------------------------
+\usepackage{enumitem}
+\usepackage{graphicx}
 \usepackage{textpos}
 \usepackage[empty]{fullpage}
 \usepackage[colorlinks=true, urlcolor=blue]{hyperref}
@@ -68,6 +70,7 @@
 \begin{document}
 
 \centering
+
 \textbf{\LARGE Omid Mashayekhi}
 
 \setlength{\TPHorizModule}{10pt} %controls horizontal movements
@@ -78,17 +81,26 @@
 \textbf{Address:} & Gates 284, Stanford Univ.\\
                   & Stanford, CA 94305\\
 \end{tabular}
+
 \end{textblock}
 
 \begin{textblock}{4}(37,0)
 \begin{tabular}{lr}
-E-Mail:     & omidm at stanford dot edu\\
-Cell Phone: & +1 (650) 644--9523\\
+E-Mail:     & \includegraphics[width=1.2in]{email.png}\\
+% E-Mail    & omidm@stanford.edu\\
+
+Cell Phone: & \includegraphics[width=1in]{cell-phone.png}\\
+% Cell Phone: & +1 (650) 644--9523\\
+
 Website:    & \href{http://www.stanford.edu/~omidm}{\url{www.stanford.edu/~omidm}}\\
 \end{tabular}
 \end{textblock}
 
 \vspace{30pt}
+
+
+
+
 
 \heading{Education}
 
@@ -108,6 +120,10 @@ Website:    & \href{http://www.stanford.edu/~omidm}{\url{www.stanford.edu/~omidm
 
 \vspace{5pt}
 
+
+
+
+
 \heading{Experience}
 
 \begin{tabular*}{7.0in}{l@{\extracolsep{\fill}}r}
@@ -119,9 +135,10 @@ Website:    & \href{http://www.stanford.edu/~omidm}{\url{www.stanford.edu/~omidm
 
 \begin{tabular*}{7.0in}{l@{\extracolsep{\fill}}r}
 \textbf{RA at Stanford Information Networks Group (SING)}  & Stanford University\\
-~~~\textbf{Nimbus}: cloud computing framework for low latency data analytics and HPC applications. & \\
-~~~(for more information visit: \href{http://nimbus.stanford.edu}{nimbus.stanford.edu}) & \\
-~~~\textbf{Janus}: centralized MAC protocol for full duplex radio. &  \\
+~~~Diverse projects from cloud computing and graphical simulations to full duplex radio. & Fall 2011 - Present\\
+% ~~~\textbf{Nimbus}: cloud computing framework for low latency data analytics and HPC applications. & \\
+% ~~~(for more information visit: \href{http://nimbus.stanford.edu}{nimbus.stanford.edu}) & \\
+% ~~~\textbf{Janus}:  &  \\
 \end{tabular*}
 	
 \vspace{5pt}
@@ -147,43 +164,113 @@ Website:    & \href{http://www.stanford.edu/~omidm}{\url{www.stanford.edu/~omidm
 	
 \vspace{5pt}
 
+
+
+
+
 \heading{Selected Projects}
 
-\begin{tabular*}{7.0in}{l@{\extracolsep{\fill}}r}
-\textbf{Packet Classification in Presence of Wildcard Expressions}  & Stanford University \\
-~~~Providing optimized and novel techniques as a project in packet switch architecture course. & Spring 2012 \\
-\end{tabular*}
+\begin{itemize}[noitemsep,topsep=0pt, leftmargin=.5cm, rightmargin=.5cm]
+
+\item[]
+\textbf{Nimbus Project:}
+cloud computing framework for fast data analytics and HPC applications.
+(\href{http://nimbus.stanford.edu}{nimbus.stanford.edu}).
+
+\vspace{5pt}
+
+\item[]
+\textbf{Janus Project:}
+centralized MAC protocol for full duplex radio that realizes double capacity.
+
+\vspace{5pt}
+
+\item[]
+\textbf{Predicting x86 Runtime:}
+supervised learning algorithms to predict serialized x86 programs runtime. 
+
+
+\vspace{5pt}
+
+
+\item[]
+\textbf{Packet Classification in Presence of Wildcard:}
+scalable, memory efficient, software-based algorithm.
 	
 \vspace{5pt}
 
-\begin{tabular*}{7.0in}{l@{\extracolsep{\fill}}r}
-\textbf{Designing OpenFlow Controller for DCell }  & Stanford University \\
-~~~Simulating DCell topology and routing for data centers using Mininet and OpenFlow controller. & Spring 2012 \\
-\end{tabular*}
+\item[]
+\textbf{OpenFlow Controller for DCell:}
+simulating DCell topology for data centers using Mininet OpenFlow controller.
 	
+\end{itemize}
 
-%	\templatex{Young Scholars Club}{Tehran, Iran}{A three-month course on Mathematics Olympiad materials.}{Summer 2006}
-
-
-
+\vspace{5pt}
 
 
+
+
+
+\heading{Papers}
+
+\begin{itemize}[noitemsep,topsep=0pt, leftmargin=.5cm, rightmargin=.5cm]
+
+
+\item[]
+\textbf{O. Mashayekhi}, H. Qu, C. Shah, P. Levis
+"Scalable, Fast Cloud Computing with Execution Templates",
+arXiv:1606.01972 [cs.DC], 2016
+
+
+\vspace{5pt}
+
+\item[]
+\textbf{O. Mashayekhi}, C. Shah, H. Qu, P. Levis
+"Distributed Graphical Simulation in the Cloud",
+arXiv:1606.01966 [cs.DC], 2016
+
+\vspace{5pt}
+
+\item[]
+H. Qu, \textbf{O. Mashayekhi}, D. Terei, P. Levis,
+"Canary: A Scheduling Architecture for High Performance Cloud Computing",
+Stanford CSTR 2016-01, 2016.
+
+
+\vspace{5pt}
+
+\item[]
+J. Y. Kim, \textbf{O. Mashayekhi}, H. Qu, M. Kazandjieva, and P. Levis,
+"Janus: A Novel MAC Protocol for Full Duplex Radio",
+Stanford CSTR 2013-02, 2013.
+
+\vspace{5pt}
+
+\item[]
+\textbf{O. Mashayekhi}, and F. Marvasti,
+"Uniquely Decodable Codes with Fast Decoder for Overloaded Synchronous CDMA Systems",
+\textit{IEEE Transactions on Communication}, vol. 60, no. 11, pp. 3145-3149, November 2012.
+
+\end{itemize}
+
+\vspace{5pt}
 
 
 
 
 
 \heading{Patents}
-	\begin{itemize}
-		\item{\textbf{O. Mashayekhi}, and F. Marvasti, "Uniquely Decodable Codes and Decoder for Overloaded Synchronous CDMA Systems", U.S. patent application no. 13,082,084, April 7/2011.}
+
+\begin{itemize}[noitemsep,topsep=0pt, leftmargin=.5cm, rightmargin=.5cm]
+\item[]
+{\textbf{O. Mashayekhi}, and F. Marvasti, "Uniquely Decodable Codes and Decoder for Overloaded Synchronous CDMA Systems", U.S. patent application no. 13,082,084, April 7/2011.}
 	\end{itemize}
 
-\heading{Publications}
-	\begin{itemize}
-		\item{J. Y. Kim, \textbf{O. Mashayekhi}, H. Qu, M. Kazandjieva, and P.
-      Levis, "Janus: A Novel MAC Protocol for Full Duplex Radio", Stanford CSTR 2013-02, 2013.}
-		\item{\textbf{O. Mashayekhi}, and F. Marvasti, "Uniquely Decodable Codes with Fast Decoder for Overloaded Synchronous CDMA Systems". \textit{IEEE Transactions on Communication}, vol. 60, no. 11, pp. 3145-3149, November 2012.}
-	\end{itemize}
+\vspace{5pt}
+
+
+
+
 
 % \heading{Submissions}
 % 	\begin{itemize}
