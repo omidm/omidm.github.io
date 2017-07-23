@@ -315,7 +315,7 @@
               <img src="images/dcell-logo.png" style="padding-top: 20px; width: 100%; max-width:200px;"/>
             </a>
           </div>
-          <div class="col-md-10 col-sm-10">
+          <div class="col-md-8 col-sm-8">
             <h3>DCell with OpenFlow</h3>
             <p style="font-size: 12pt;">
               Simulating DCell topology and routing for data centers using
@@ -329,6 +329,11 @@
               href="https://reproducingnetworkresearch.wordpress.com/2012/06/06/dcell-a-scalable-and-fault-tolerant-network-structure-for-data-centers/"
               target="_blank">here </a>.
             </p>
+          </div>
+          <div class="col-md-2 col-sm-2">
+            <a class="btn-lg" href="https://reproducingnetworkresearch.wordpress.com/2012/06/06/dcell-a-scalable-and-fault-tolerant-network-structure-for-data-centers/" target="_blank">
+              <span class="glyphicon glyphicon-file" aria-hidden="true" style="font-size: 30px;"></span>
+            </a>
           </div>
         </div>
       </div>
@@ -367,7 +372,9 @@
           <div class="col-md-9 col-sm-9">
             <dl>
               <dt>
-                Fast, Distributed Computations in the Cloud 
+                <a href="materials/thesis-omidm-augmented.pdf" target="_blank">
+                  Fast, Distributed Computations in the Cloud 
+                </a>
               </dt>
               <dd>
                 Omid Mashayekhi
@@ -378,6 +385,9 @@
               <dd>
                 Stanford University Doctoral Dissertation, 2017 
               </dd>
+              <dt>
+                <a data-toggle="collapse" data-target="#abs-thesis">Abstract</a>
+              </dt>
             </dl>
           </div>
           <div class="col-md-3 col-sm-3">
@@ -392,6 +402,42 @@
                 </a>
           </div>
         </div>
+        <div id="abs-thesis" class="row-padded collapse">
+          Today, cloud computing frameworks adopt one of two strategies to
+          schedule their computations over hundreds to thousands of machines. In
+          the centralized strategy, a controller dispatches computation units,
+          called tasks, to worker nodes. Centralization allows a framework to
+          quickly reschedule, respond to faults, and mitigate stragglers.
+          However, a centralized controller can only schedule a few thousand
+          tasks per second and becomes a bottleneck. In the distributed
+          strategy, there is no central node. These systems install data flow
+          graphs on each node, which then independently execute and exchange
+          data. By distributing the control plane and turning it into data flow,
+          these frameworks can execute hundreds of thousands of tasks per
+          second, and do not have a control plane bottleneck. However, data flow
+          graphs describe a static schedule; even small changes, such as
+          migrating a task between two nodes, requires stopping all nodes,
+          recompiling the flow graph and reinstalling it on every node. This
+          leads to high latency or wasteful resource utilization for
+          rescheduling, fault recovery, or straggler mitigation.
+
+          This dissertation presents a new, third strategy, called execution
+          templates. Execution templates leverage a program’s repetitive
+          control flow to cache control plane decisions in templates. A template
+          is a parametrisable block of tasks: it caches some information (e.g.,
+          task dependencies) but instantiation requires some parameters (e.g.,
+          task identifiers). Executing the cached tasks in a template requires
+          sending a single message that loads the new parameters. Large-scale
+          scheduling changes install new templates, while small changes apply
+          edits to existing templates. Execution templates are not bound to a
+          static control flow and efficiently capture nested loops and data
+          dependent branches. Evaluation of execution templates in Nimbus, a
+          cloud computing framework, shows that they provide the fine-grained
+          scheduling flexibility of centralized control planes while matching
+          the performance of the distributed ones. Execution templates in Nimbus
+          support not only the traditional data analytics, but also complex,
+          scientific applications such as hybrid graphical simulations.
+        </div>
       </div>
 
       <h2>Publications</h2>
@@ -401,7 +447,9 @@
           <div class="col-md-9 col-sm-9">
             <dl>
               <dt>
-                Execution Templates: Caching Control Plane Decisions for Strong Scaling of Data Analytics
+                <a href="materials/nimbus-atc.pdf" target="_blank">
+                  Execution Templates: Caching Control Plane Decisions for Strong Scaling of Data Analytics
+                </a>
               </dt>
               <dd>
                 Omid Mashayekhi, Hang Qu, Chinmayee Shah, Philip Levis
@@ -409,6 +457,9 @@
               <dd>
                 In proceedings of 2017 USENIX Annual Technical Conference (USENIX ATC '17)
               </dd>
+              <dt>
+                <a data-toggle="collapse" data-target="#abs-nimbus-atc">Abstract</a>
+              </dt>
             </dl>
           </div>
           <div class="col-md-3 col-sm-3">
@@ -423,34 +474,27 @@
                 </a>
           </div>
         </div>
-        <div class="row-padded">
-          <dl>
-            <dt>
-              Abstract
-            </dt>
-            <dd>
-              Control planes of cloud frameworks trade off between scheduling
-              granularity and performance. Centralized systems schedule at task
-              granularity, but only schedule a few thousand tasks per second.
-              Distributed systems schedule hundreds of thousands of tasks per
-              second but changing the schedule is costly.
+        <div id="abs-nimbus-atc" class="row-padded collapse">
+          Control planes of cloud frameworks trade off between scheduling
+          granularity and performance. Centralized systems schedule at task
+          granularity, but only schedule a few thousand tasks per second.
+          Distributed systems schedule hundreds of thousands of tasks per
+          second but changing the schedule is costly.
 
-              We present execution templates, a control plane abstraction that can
-              schedule hundreds of thousands of tasks per second while supporting
-              fine-grained, per-task scheduling decisions. Execution templates
-              leverage a program’s repetitive control flow to cache blocks of
-              frequently-executed tasks. Executing a task in a template requires
-              sending a single message. Large-scale scheduling changes install new
-              templates, while small changes apply edits to existing templates.
+          We present execution templates, a control plane abstraction that can
+          schedule hundreds of thousands of tasks per second while supporting
+          fine-grained, per-task scheduling decisions. Execution templates
+          leverage a program’s repetitive control flow to cache blocks of
+          frequently-executed tasks. Executing a task in a template requires
+          sending a single message. Large-scale scheduling changes install new
+          templates, while small changes apply edits to existing templates.
 
-              Evaluations of execution templates in Nimbus, a data analytics
-              framework, find that they provide the fine-grained scheduling
-              flexibility of centralized control planes while matching the strong
-              scaling of distributed ones. Execution templates support complex,
-              real-world applications, such as a fluid simulation with a triply
-              nested loop and data dependent branches.
-            </dd>
-          </dl>
+          Evaluations of execution templates in Nimbus, a data analytics
+          framework, find that they provide the fine-grained scheduling
+          flexibility of centralized control planes while matching the strong
+          scaling of distributed ones. Execution templates support complex,
+          real-world applications, such as a fluid simulation with a triply
+          nested loop and data dependent branches.
         </div>
       </div>
 
@@ -462,7 +506,9 @@
           <div class="col-md-9 col-sm-9">
             <dl>
               <dt>
-                Janus: A Novel MAC Protocol for Full Duplex Radio 
+                <a href="http://hci.stanford.edu/cstr/reports/2013-02.pdf" target="_blank">
+                  Janus: A Novel MAC Protocol for Full Duplex Radio 
+                </a>
               </dt>
               <dd>
                 Jae Young Kim, Omid Mashayekhi, Hang Qu, Maria Kazandjieva, and Philip Levis
@@ -470,6 +516,9 @@
               <dd>
                 Stanford CSTR 2013-02, 2013
               </dd>
+              <dt>
+                <a data-toggle="collapse" data-target="#abs-janus">Abstract</a>
+              </dt>
             </dl>
           </div>
           <div class="col-md-3 col-sm-3">
@@ -478,28 +527,21 @@
                 </a>
           </div>
         </div>
-        <div class="row-padded">
-          <dl>
-            <dt>
-              Abstract
-            </dt>
-            <dd>
-              This paper presents Janus, a novel MAC protocol for
-              full–duplex wireless networks. Unlike other full-duplex
-              MACs, Janus allows partially interfering nodes to cooperate
-              by finding the appropriate transmission rates based on
-              interference levels, making better use of the channel. Computing
-              the optimal schedule and transmission rates is NPComplete,
-              so Janus uses a cheaper heuristic approach. Janus
-              also ensures that channel access time is shared fairly between
-              all nodes. Janus has lower per-packet overhead compared
-              to CSMA/CA because it eliminates random back-off
-              and lets nodes transmit multiple packets with a single set of
-              control packets. We show that for a setup with one access
-              point and three nodes, Janus achieves 2.5X the throughput
-              of half–duplex system based on CSMA/CA.
-            </dd>
-          </dl>
+        <div id="abs-janus" class="row-padded collapse">
+          This paper presents Janus, a novel MAC protocol for
+          full–duplex wireless networks. Unlike other full-duplex
+          MACs, Janus allows partially interfering nodes to cooperate
+          by finding the appropriate transmission rates based on
+          interference levels, making better use of the channel. Computing
+          the optimal schedule and transmission rates is NPComplete,
+          so Janus uses a cheaper heuristic approach. Janus
+          also ensures that channel access time is shared fairly between
+          all nodes. Janus has lower per-packet overhead compared
+          to CSMA/CA because it eliminates random back-off
+          and lets nodes transmit multiple packets with a single set of
+          control packets. We show that for a setup with one access
+          point and three nodes, Janus achieves 2.5X the throughput
+          of half–duplex system based on CSMA/CA.
         </div>
       </div>
 
@@ -510,7 +552,9 @@
           <div class="col-md-9 col-sm-9">
             <dl>
               <dt>
-                Uniquely Decodable Codes with Fast Decoder for Overloaded Synchronous CDMA Systems 
+                <a href="materials/overloaded-codes.pdf" target="_blank">
+                  Uniquely Decodable Codes with Fast Decoder for Overloaded Synchronous CDMA Systems 
+                </a>
               </dt>
               <dd>
                 Omid Mashayekhi, Farokh Marvasti
@@ -518,6 +562,9 @@
               <dd>
                 IEEE Transactions on Communication, vol. 60, no. 11, pp. 3145-3149, November 2012
               </dd>
+              <dt>
+                <a data-toggle="collapse" data-target="#abs-codes">Abstract</a>
+              </dt>
             </dl>
           </div>
           <div class="col-md-3 col-sm-3">
@@ -529,25 +576,18 @@
                 </a>
           </div>
         </div>
-        <div class="row-padded">
-          <dl>
-            <dt>
-              Abstract
-            </dt>
-            <dd>
-              In this paper, we introduce a new class of signature matrices for
-              overloaded synchronous CDMA systems that have a very low complexity
-              decoder. While overloaded systems are more efficient from the
-              bandwidth point of view, the Maximum Likelihood (ML) implementation
-              for decoding is impractical even for moderate dimensions. Simulation
-              results show that the performance of the proposed decoder is very
-              close to that of the ML decoder. Indeed, the proposed decoding
-              scheme needs neither multiplication nor addition and requires only a
-              few comparisons . Furthermore, the computational complexity and the
-              probability of error vs. Signal to Noise Ratios (SNR) are derived
-              analytically.
-            </dd>
-          </dl>
+        <div id="abs-codes" class="row-padded collapse">
+          In this paper, we introduce a new class of signature matrices for
+          overloaded synchronous CDMA systems that have a very low complexity
+          decoder. While overloaded systems are more efficient from the
+          bandwidth point of view, the Maximum Likelihood (ML) implementation
+          for decoding is impractical even for moderate dimensions. Simulation
+          results show that the performance of the proposed decoder is very
+          close to that of the ML decoder. Indeed, the proposed decoding
+          scheme needs neither multiplication nor addition and requires only a
+          few comparisons . Furthermore, the computational complexity and the
+          probability of error vs. Signal to Noise Ratios (SNR) are derived
+          analytically.
         </div>
       </div>
 
@@ -559,7 +599,9 @@
           <div class="col-md-9 col-sm-9">
             <dl>
               <dt>
-                Scalable, Fast Cloud Computing with Execution Templates
+                <a href="materials/nimbus-osdi-poster.pdf" target="_blank">
+                  Scalable, Fast Cloud Computing with Execution Templates
+                </a>
               </dt>
               <dd>
                 Omid Mashayekhi, Hang Qu, Chinmayee Shah, Philip Levis
@@ -590,7 +632,9 @@
           <div class="col-md-9 col-sm-9">
             <dl>
               <dt>
-                Distributed Graphical Simulation in the Cloud
+                <a href="materials/nimbus-socc.pdf" target="_blank">
+                  Distributed Graphical Simulation in the Cloud
+                </a>
               </dt>
               <dd>
                 Omid Mashayekhi, Chinmayee Shah, Hang Qu, Andrew Lim, Philip Levis
@@ -598,6 +642,9 @@
               <dd>
                 arXiv:1606.01966 [cs.DC], 2016
               </dd>
+              <dt>
+                <a data-toggle="collapse" data-target="#abs-nimbus-socc">Abstract</a>
+              </dt>
             </dl>
           </div>
           <div class="col-md-3 col-sm-3">
@@ -609,28 +656,21 @@
                 </a>
           </div>
         </div>
-        <div class="row-padded">
-          <dl>
-            <dt>
-              Abstract
-            </dt>
-            <dd>
-              Graphical simulations are a cornerstone of modern media and
-              films. But existing software packages are designed to run on HPC
-              nodes, and perform poorly in the computing cloud.  These
-              simulations have complex data access patterns over complex data
-              structures, and mutate data arbitrarily, and so are a poor fit for
-              existing cloud computing systems. We describe a software
-              architecture for running graphical simulations in the cloud that
-              decouples control logic, computations and data exchanges. This
-              allows a central controller to balance load by redistributing
-              computations, and recover from failures. Evaluations show that the
-              architecture can run existing, state-of-the-art simulations in the
-              presence of stragglers and failures, thereby enabling this large
-              class of applications to use the computing cloud for the first
-              time.
-            </dd>
-          </dl>
+        <div id="abs-nimbus-socc" class="row-padded collapse">
+          Graphical simulations are a cornerstone of modern media and
+          films. But existing software packages are designed to run on HPC
+          nodes, and perform poorly in the computing cloud.  These
+          simulations have complex data access patterns over complex data
+          structures, and mutate data arbitrarily, and so are a poor fit for
+          existing cloud computing systems. We describe a software
+          architecture for running graphical simulations in the cloud that
+          decouples control logic, computations and data exchanges. This
+          allows a central controller to balance load by redistributing
+          computations, and recover from failures. Evaluations show that the
+          architecture can run existing, state-of-the-art simulations in the
+          presence of stragglers and failures, thereby enabling this large
+          class of applications to use the computing cloud for the first
+          time.
         </div>
       </div>
 
@@ -641,7 +681,9 @@
           <div class="col-md-9 col-sm-9">
             <dl>
               <dt>
-                Scalable, Fast Cloud Computing with Execution Templates
+                <a href="materials/nimbus-osdi.pdf" target="_blank">
+                  Scalable, Fast Cloud Computing with Execution Templates
+                </a>
               </dt>
               <dd>
                 Omid Mashayekhi, Hang Qu, Chinmayee Shah, Philip Levis
@@ -649,6 +691,9 @@
               <dd>
                 arXiv:1606.01972 [cs.DC], 2016
               </dd>
+              <dt>
+                <a data-toggle="collapse" data-target="#abs-nimbus-osdi">Abstract</a>
+              </dt>
             </dl>
           </div>
           <div class="col-md-3 col-sm-3">
@@ -660,34 +705,27 @@
                 </a>
           </div>
         </div>
-        <div class="row-padded">
-          <dl>
-            <dt>
-              Abstract
-            </dt>
-            <dd>
-            Large scale cloud data analytics applications are often CPU
-            bound. Most of these cycles are wasted: benchmarks written in C++ run
-            10-51 times faster than frameworks such as Naiad and Spark.  However,
-            calling faster implementations from those frameworks only sees
-            moderate (4-5x) speedups because their control planes cannot schedule
-            work fast enough.
-            
-            This paper presents execution templates, a control plane abstraction
-            for CPU-bound cloud applications, such as machine learning.  Execution
-            templates leverage highly repetitive control flow to cache scheduling
-            decisions as templates.  Rather than reschedule hundreds of
-            thousands of tasks on every loop execution, nodes instantiate these
-            templates.  A controller's template specifies the execution across all
-            worker nodes, which it partitions into per-worker templates. To ensure
-            that templates execute correctly, controllers dynamically patch
-            templates to match program control flow.  We have implemented
-            execution templates in Nimbus, a C++ cloud computing framework.
-            Running in Nimbus, analytics benchmarks can run 16-43 times faster
-            than in Naiad and Spark. Nimbus's control plane can scale out to run
-            these faster benchmarks on up to 100 nodes (800 cores).
-            </dd>
-          </dl>
+        <div id="abs-nimbus-osdi" class="row-padded collapse">
+          Large scale cloud data analytics applications are often CPU
+          bound. Most of these cycles are wasted: benchmarks written in C++ run
+          10-51 times faster than frameworks such as Naiad and Spark.  However,
+          calling faster implementations from those frameworks only sees
+          moderate (4-5x) speedups because their control planes cannot schedule
+          work fast enough.
+          
+          This paper presents execution templates, a control plane abstraction
+          for CPU-bound cloud applications, such as machine learning.  Execution
+          templates leverage highly repetitive control flow to cache scheduling
+          decisions as templates.  Rather than reschedule hundreds of
+          thousands of tasks on every loop execution, nodes instantiate these
+          templates.  A controller's template specifies the execution across all
+          worker nodes, which it partitions into per-worker templates. To ensure
+          that templates execute correctly, controllers dynamically patch
+          templates to match program control flow.  We have implemented
+          execution templates in Nimbus, a C++ cloud computing framework.
+          Running in Nimbus, analytics benchmarks can run 16-43 times faster
+          than in Naiad and Spark. Nimbus's control plane can scale out to run
+          these faster benchmarks on up to 100 nodes (800 cores).
         </div>
       </div>
 
@@ -697,7 +735,9 @@
           <div class="col-md-9 col-sm-9">
             <dl>
               <dt>
-                Canary: A Scheduling Architecture for High Performance Cloud Computing
+                <a href="http://hci.stanford.edu/cstr/reports/2016-01.pdf" target="_blank">
+                  Canary: A Scheduling Architecture for High Performance Cloud Computing
+                </a>
               </dt>
               <dd>
                 Hang Qu, Omid Mashayekhi, David Terei, Philip Levis
@@ -705,6 +745,9 @@
               <dd>
                 Stanford CSTR 2016-01, 2016
               </dd>
+              <dt>
+                <a data-toggle="collapse" data-target="#abs-canary">Abstract</a>
+              </dt>
             </dl>
           </div>
           <div class="col-md-3 col-sm-3">
@@ -713,35 +756,28 @@
                 </a>
           </div>
         </div>
-        <div class="row-padded">
-          <dl>
-            <dt>
-              Abstract
-            </dt>
-            <dd>
-              We present Canary, a scheduling architecture that allows
-              high performance analytics workloads to scale out to run
-              on thousands of cores. Canary is motivated by the observation
-              that a central scheduler is a bottleneck for high
-              performance codes: a handful of multicore workers can
-              execute tasks faster than a controller can schedule them.
-              The key insight in Canary is to reverse the responsibilities
-              between controllers and workers. Rather than
-              dispatch tasks to workers, which then fetch data as necessary,
-              in Canary the controller assigns data partitions to
-              workers, which then spawn and schedule tasks locally.
-              We evaluate three benchmark applications in Canary
-              on up to 64 servers and 1,152 cores on Amazon EC2.
-              Canary achieves up to 9−90× speedup over Spark and
-              up to 4× speedup over GraphX, a highly optimized graph
-              analytics engine. While current centralized schedulers
-              can schedule 2,500 tasks/second, each Canary worker can
-              schedule 136,000 tasks/second per core and experiments
-              show this scales out linearly, with 64 workers scheduling
-              over 120 million tasks per second, allowing Canary to
-              support optimized jobs running on thousands of cores.
-            </dd>
-          </dl>
+        <div id="abs-canary" class="row-padded collapse">
+          We present Canary, a scheduling architecture that allows
+          high performance analytics workloads to scale out to run
+          on thousands of cores. Canary is motivated by the observation
+          that a central scheduler is a bottleneck for high
+          performance codes: a handful of multicore workers can
+          execute tasks faster than a controller can schedule them.
+          The key insight in Canary is to reverse the responsibilities
+          between controllers and workers. Rather than
+          dispatch tasks to workers, which then fetch data as necessary,
+          in Canary the controller assigns data partitions to
+          workers, which then spawn and schedule tasks locally.
+          We evaluate three benchmark applications in Canary
+          on up to 64 servers and 1,152 cores on Amazon EC2.
+          Canary achieves up to 9−90× speedup over Spark and
+          up to 4× speedup over GraphX, a highly optimized graph
+          analytics engine. While current centralized schedulers
+          can schedule 2,500 tasks/second, each Canary worker can
+          schedule 136,000 tasks/second per core and experiments
+          show this scales out linearly, with 64 workers scheduling
+          over 120 million tasks per second, allowing Canary to
+          support optimized jobs running on thousands of cores.
         </div>
       </div>
 

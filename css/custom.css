@@ -9,6 +9,7 @@ body {
 a:hover {
   color: #E98300;
   text-decoration: none;
+  cursor: pointer;
 }
 
 a {
