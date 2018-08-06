@@ -8,6 +8,7 @@
 \usepackage{enumitem}
 \usepackage{graphicx}
 \usepackage{textpos}
+\usepackage{ifthen}
 \usepackage[empty]{fullpage}
 \usepackage[colorlinks=true, urlcolor=blue]{hyperref}
 \raggedbottom
@@ -43,6 +44,14 @@
 		#1 & \textit{#2} \\
 \end{tabular*}\vspace{-1pt}}
 
+
+\usepackage{catchfile}
+\newcommand{\getenv}[2]{%
+  \CatchFileEdef{\temp}{"|kpsewhich --var-value #2"}{}%
+  \if\relax\detokenize{#1}\relax\temp\else\let#1\temp\fi}
+
+\getenv{\ISEXTENDED}{ISEXTENDED}
+
 %-----------------------------------------------------------
 
 
@@ -64,8 +73,8 @@
 
 \begin{textblock}{4}(37,0)
 \begin{tabular}{lr}
-\textbf{E-Mail:}     & \includegraphics[width=1.2in]{gmail.png}\\
-\textbf{Cell Phone:} & \includegraphics[width=1in]{cell-phone.png}\\
+\textbf{E-Mail:}     & \includegraphics[width=1.2in]{figs/gmail.png}\\
+\textbf{Cell Phone:} & \includegraphics[width=1in]{figs/cell-phone.png}\\
 \end{tabular}
 \end{textblock}
 
@@ -107,7 +116,7 @@
 \vspace{5pt}
 
 \begin{tabular*}{7.0in}{l@{\extracolsep{\fill}}r}
-\textbf{Intern at bebop Inc.}  & Los Altos, CA \\
+\textbf{Software Engineer Intern at bebop Inc.}  & Los Altos, CA \\
 ~~~Back-end engineer working on developing a low latency data store. &  Summer 2015\\
 \end{tabular*}
 
@@ -121,12 +130,14 @@
 \vspace{5pt}
 
 \begin{tabular*}{7.0in}{l@{\extracolsep{\fill}}r}
-\textbf{Intern at Cisco Systems }  & San Jose, CA \\
+\textbf{Software Engineer Intern at Cisco Systems }  & San Jose, CA \\
 ~~~Software engineer at Wireless Networking Business Unit (WNBU). & Summer 2012 \\
 \end{tabular*}
 	
 \vspace{5pt}
-	
+
+\ifthenelse{\equal{\ISEXTENDED}{true }}{
+
 \begin{tabular*}{7.0in}{l@{\extracolsep{\fill}}r}
 \textbf{Teaching Experience} & Stanford University \\
 ~~~Course Assistant in CS344C, Cloud Simulation Systems. & Spring 2013 \\
@@ -141,6 +152,7 @@
 	
 \vspace{5pt}
 
+}{} % End If
 
 
 
@@ -162,6 +174,8 @@ centralized MAC protocol for full duplex radio that realizes double capacity.
 
 \vspace{5pt}
 
+\ifthenelse{\equal{\ISEXTENDED}{true }}{
+
 \item[]
 \textbf{Predicting x86 Runtime:}
 supervised learning algorithms to predict serialized x86 programs runtime. 
@@ -178,10 +192,11 @@ scalable, memory efficient, software-based algorithm.
 \textbf{OpenFlow Controller for DCell:}
 simulating DCell topology for data centers using Mininet OpenFlow controller.
 	
+}{} % End If
+
 \end{itemize}
 
 \vspace{5pt}
-
 
 
 
@@ -193,7 +208,7 @@ simulating DCell topology for data centers using Mininet OpenFlow controller.
 \item[]
 \textbf{O. Mashayekhi}, C. Shah, H. Qu, A, Lim, P. Levis
 "Automatically Distributing Eulerian and Hybrid Fluid Simulations in the Cloud",
-In ACM Transactions on Graphics, 2018 (ACM TOG' 18).
+In ACM Transactions on Graphics, vol. 37, no. 2, Article 24, June 2018, Presented at SIGGRAPH 2018.
 
 \vspace{5pt}
 
@@ -203,6 +218,18 @@ In ACM Transactions on Graphics, 2018 (ACM TOG' 18).
 In proceedings of 2017 USENIX Annual Technical Conference (USENIX ATC '17).
 
 \vspace{5pt}
+
+
+\ifthenelse{\equal{\ISEXTENDED}{true }}{
+
+\item[]
+H. Qu, \textbf{O. Mashayekhi}, C. Shah, P. Levis
+"Decoupling the Control Plane from Program Control Flow for Flexibility and Performance in Cloud Computing",
+In Proceedings of the 13th European Conference on Computer Systems (EuroSys '18), 2018
+
+\vspace{5pt}
+
+}{} % End If
 
 \item[]
 J. Y. Kim, \textbf{O. Mashayekhi}, H. Qu, M. Kazandjieva, and P. Levis,
@@ -239,6 +266,8 @@ US Patent 8,582,604, 2013
 
 
 
+\ifthenelse{\equal{\ISEXTENDED}{true }}{\break}{}
+
 \heading{Computer Skills}
 
 \begin{description}
@@ -255,7 +284,7 @@ Apache Spark, Naiad, Mininet, MATLAB, MATHCAD
 
 
 
-\heading{Honors and Awards}
+\heading{Selected Honors and Awards}
 
 \begin{itemize}
 
@@ -265,13 +294,17 @@ Apache Spark, Naiad, Mininet, MATLAB, MATHCAD
 
 \item  \template{\textbf{Ranked} $\mathbf{2^{nd}}$ in the EE Depart., Comm. branch, Sharif University of Technology.}{Class 2007-2011}
 
-\item \template{ \textbf{Second Winner} of the "Bests Undergraduate Thesis Award", Sharif University of Technology.}{2011}
-
 \item \template{\textbf{Bronze} medalist of Iran National Mathematics Olympiad.}{2006}
+
+\ifthenelse{\equal{\ISEXTENDED}{true }}{
+
+\item \template{ \textbf{Second Winner} of the "Bests Undergraduate Thesis Award", Sharif University of Technology.}{2011}
 
 \item \template{\textbf{Ranked} $\mathbf{46^{th}}$ in university entrance exam among more than 300,000 students.}{2007}
 
 \item \template{Member of the "Iranian National Elite Foundation".}{2007-2011} 
+
+}{} % End If
 
 \end{itemize}
 

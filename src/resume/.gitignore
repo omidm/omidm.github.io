@@ -5,6 +5,7 @@
 *.blg
 *synctex.gz
 resume.pdf
+extended_resume.pdf
 *.pyc
 *.swp
 *.soc

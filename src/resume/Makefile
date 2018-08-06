@@ -1,39 +1,37 @@
 
 TARGET = resume
+EXTENDED_TARGET = extended_$(TARGET)
 
-TEXFILES = $(wildcard *.tex)
-PDF_FIGURES = $(wildcard figs/*.pdf)
-PNG_FIGURES = $(wildcard figs/*.png)
-FIGURES= $(PDF_FIGURES) $(PNG_FIGURES)
 TEXFILE = $(TARGET).tex
 PDF = $(TARGET).pdf
+EXTENDED_PDF = $(EXTENDED_TARGET).pdf
+PDF_FIGURES = $(wildcard figs/*.pdf)
+PNG_FIGURES = $(wildcard figs/*.png)
+FIGURES = $(PDF_FIGURES) $(PNG_FIGURES)
 
-all: $(PDF)
+all: $(PDF) $(EXTENDED_PDF)
 
-%.pdf: %.tex $(TEXFILES) $(FIGURES)
-	pdflatex $*.tex
+$(PDF): $(TEXFILE) $(FIGURES)
+	pdflatex $(TEXFILE)
+
+$(EXTENDED_PDF): export ISEXTENDED=true
+$(EXTENDED_PDF): $(TEXFILE) $(FIGURES)
+	pdflatex -jobname=$(EXTENDED_TARGET) $(TEXFILE)
 
 clean:
-	/bin/rm -f $(PDF) *.dvi *.aux *.ps *~ *.log *.out *.lot *.lof *.toc *.blg *.bbl *.soc
+	/bin/rm -f $(PDF) $(EXTENDED_PDF) *.dvi *.aux *.ps *~ *.log *.out *.lot *.lof *.toc *.blg *.bbl *.soc
 
-install:
-	pdflatex $(TARGET).tex
+install: clean all
 	cp $(PDF) ../../materials
-view:
-	pdflatex $(TARGET).tex
+	cp $(EXTENDED_PDF) ../../materials
+
+view: clean all
 	okular $(PDF)
+	okular $(EXTENDED_PDF)
 
-osx:
-	pdflatex $(TARGET).tex
+osx: clean all
 	open $(PDF)
-
-evince:
-	pdflatex $(TARGET).tex
-	evince $(PDF) &
-
-windows:
-	pdflatex $(TARGET).tex
-	explorer.exe $(PDF) &
+	open $(EXTENDED_PDF)
 
 check:
-	pdflatex $(TARGET).tex | grep -i -e "undefined" -e "multiply"
+	pdflatex $(TEXFILE) | grep -i -e "undefined" -e "multiply"
