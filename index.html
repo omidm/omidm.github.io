@@ -490,6 +490,71 @@
           <div class="col-md-8 col-sm-8">
             <dl>
               <dt>
+                <a href="https://dl.acm.org/doi/pdf/10.1145/3544216.3544265" target="_blank">
+                  Jupiter Evolving: Transforming Google's Datacenter Network via Optical Circuit Switches and Software-Defined Networking
+                </a>
+              </dt>
+              <dd>
+                Leon Poutievski, Omid Mashayekhi, Joon Ong, Arjun Singh,
+                Mukarram Tariq, Rui Wang, Jianan Zhang, Virginia Beauregard,
+                Patrick Conner, Steve Gribble, Rishi Kapoor, Stephen Kratzer,
+                Nanfang Li, Hong Liu, Karthik Nagaraj, Jason Ornstein, Samir
+                Sawhney, Ryohei Urata, Lorenzo Vicisano, Kevin Yasumura,
+                Shidong Zhang, Junlan Zhou, Amin Vahdat
+              </dd>
+              <dd>
+                In Proceedings of ACM SIGCOMM 2022
+              </dd>
+              <dt>
+                <a data-toggle="collapse" data-target="#abs-jupiter-evolving">Abstract</a>
+              </dt>
+            </dl>
+          </div>
+          <div class="col-md-4 col-sm-4">
+                <a class="btn-lg" href="https://dl.acm.org/doi/pdf/10.1145/3544216.3544265" target="_blank">
+                  <span class="glyphicon glyphicon-file" aria-hidden="true" style="font-size: 30px;"></span>
+                </a>
+                <a class="btn-lg" href="https://www.youtube.com/watch?v=Hfl-i56hZUg" target="_blank">
+                  <span class="glyphicon glyphicon-film" aria-hidden="true" style="font-size: 30px;"></span>
+                </a>
+                <a class="btn-lg" href="https://research.google/pubs/pub51587/" target="_blank">
+                  <span class="glyphicon glyphicon-globe" aria-hidden="true" style="font-size: 30px;"></span>
+                </a>
+          </div>
+        </div>
+        <div id="abs-jupiter-evolving" class="row-padded collapse">
+
+            We present a decade of evolution and production experience with
+            Jupiter datacenter network fabrics. In this period Jupiter has
+            delivered 5x higher speed and capacity, 30% reduction in capex, 41%
+            reduction in power, incremental deployment and technology refresh
+            all while serving live production traffic. A key enabler for these
+            improvements is evolving Jupiter from a Clos to a direct-connect
+            topology among the machine aggregation blocks. Critical
+            architectural changes for this include: A datacenter
+            interconnection layer employing Micro-ElectroMechanical Systems
+            (MEMS) based Optical Circuit Switches (OCSes) to enable dynamic
+            topology reconfiguration, centralized Software-Defined Networking
+            (SDN) control for traffic engineering, and automated network
+            operations for incremental capacity delivery and topology
+            engineering. We show that the combination of traffic and topology
+            engineering on direct-connect fabrics achieves similar throughput
+            as Clos fabrics for our production traffic patterns. We also
+            optimize for path lengths: 60% of the traffic takes direct path
+            from source to destination aggregation blocks, while the remaining
+            transits one additional block, achieving an average blocklevel path
+            length of 1.4 in our fleet today. OCS also achieves 3x faster
+            fabric reconfiguration compared to pre-evolution Clos fabrics that
+            used a patch panel based interconnect.
+        </div>
+      </div>
+
+
+      <div class="jumbotron">
+        <div class="row">
+          <div class="col-md-8 col-sm-8">
+            <dl>
+              <dt>
                 <a href="materials/nimbus-tog.pdf" target="_blank">
                   Automatically Distributing Eulerian and Hybrid Fluid Simulations in the Cloud
                 </a>
